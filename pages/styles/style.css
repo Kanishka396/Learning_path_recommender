@@ -2,7 +2,7 @@
    GLOBAL BACKGROUND IMAGE
    =============================== */
 .stApp {
-    background-image: url("https://www.freepik.com/free-photos-vectors/blurred-background-with-code");
+    background-image: url("/assets/bg.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
