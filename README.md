@@ -8,6 +8,19 @@ It combines agentic AI, intelligent skill tracking, and curated course recommend
 The system not only suggests what topics to study but also explains why each skill matters, how it connects to the overall career path, and when it should be learned.
 By continuously organizing learning priorities and monitoring progress, PathFinder transforms scattered online resources into a focused, goal-driven learning experience.
 
+Working Demo
+
+streamlit run app.py
+
+The application launches a fully functional multi-page dashboard where users can:
+Select career goal
+Mark known skills
+Generate AI learning roadmap
+View AI explanations
+Track progress visually
+
+
+
 Project Overview
 
 PathFinder is an AI-powered learning guidance system designed to help students and professionals navigate the often confusing process of skill development. 
@@ -29,6 +42,19 @@ AI-generated explanations that clarify the purpose and importance of each skill
 Recommended courses and resources aligned with the roadmap
 A progress tracking dashboard to help users stay motivated and monitor growth
 Overall, PathFinder transforms scattered learning into a structured, goal-oriented journey, making it easier for users to learn efficiently and confidently.
+
+Engineering Highlights
+
+This project goes beyond simple LLM prompting. Key engineering components include:
+
+Modular multi-agent architecture in Python
+Skill priority computation pipeline
+Session-state based progress tracking
+Structured course-to-skill mapping
+Defensive handling for API failures
+Multi-page Streamlit navigation system
+
+Important: The LLM is used as an assistive reasoning component, while the core application logic and state management are implemented manually in Python.
 
 Key Features
 1. Learning Planner Agent
@@ -107,3 +133,62 @@ The final stage presents results to the user through the Streamlit interface. It
 the generated roadmap,
 AI explanations,
 progress tracking, and recommended learning resources.
+
+Implementation Notes
+Agents are implemented as dedicated Python modules:
+
+agents/planner_agent.py — roadmap generation
+agents/explainer_agent.py — skill explanations
+agents/progress_coach_agent.py — progress insights
+
+Agents communicate using structured Python dictionaries, not raw prompt chaining.
+
+Tech Stack:
+Core
+  Python
+  Streamlit
+
+AI Layer
+  OpenAI API
+  Agent-based architecture
+
+Frontend
+   HTML
+   CSS
+   Streamlit components
+
+Project Structure
+learning_path_recommender/
+│
+├── app.py
+├── agents/
+├── data/
+├── pages/
+├── assets/
+├── styles/
+└── utils/
+
+Installation & Setup
+1. Clone repo
+git clone https://github.com/Kanishka396/Learning_path_recommender.git
+cd Learning_path_recommender
+2. Create virtual environment
+python -m venv venv
+venv\Scripts\activate
+3. Install dependencies
+pip install -r requirements.txt
+4. Add API key
+Create .env:
+OPENAI_API_KEY="key"
+5. Run app
+streamlit run app.py
+
+Future Improvements:-
+Voice AI assistant
+Resume skill gap analyzer
+Adaptive weekly planner
+Difficulty estimation agent
+Cloud deployment
+
+
+
