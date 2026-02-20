@@ -148,4 +148,3 @@ else:
     st.info("Coach Feedback (Fallback Mode)")
 
 st.write(coach_result["message"])
-pwd
